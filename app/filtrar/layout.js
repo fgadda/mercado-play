@@ -1,7 +1,7 @@
 import Header from "@/components/header"
 import Tabs from "@/components/tabs"
 
-export default function Layout() {
+export default function Layout({ children }) {
   return (
     <main className="relative min-h-screen">
       <Header>
@@ -9,6 +9,7 @@ export default function Layout() {
           <Tabs />
         </section>
       </Header>
+      {children}
     </main>
   )
 }
