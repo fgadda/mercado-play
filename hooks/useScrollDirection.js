@@ -22,5 +22,5 @@ export default function useScrollDirection() {
     }
   }, [prevScrollY])
 
-  return { scrollDirection }
+  return { scrollDirection, prevScrollY }
 }
