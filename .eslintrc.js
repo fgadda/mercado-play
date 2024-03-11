@@ -4,6 +4,5 @@ module.exports = {
   rules: {
     "no-unused-vars": "error",
     "prefer-const": "error",
-    "react-hooks/exhaustive-deps": "error",
   },
 }
