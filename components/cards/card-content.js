@@ -18,5 +18,11 @@ function Card({ movie: { title, thumbnail, tag, subtitle } }) {
 }
 
 export default function CardContent({ results }) {
-  return results?.map(result => <Card key={result.title} movie={result} />)
+  return (
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {results?.map(result => (
+        <Card key={result.title} movie={result} />
+      ))}
+    </div>
+  )
 }
