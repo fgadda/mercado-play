@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
 
-import { fetchFeedContent } from "@/actions/fetch-feed-content"
+import { fetchFeedContent } from "@/lib/fetch-feed-content"
 import CardContent from "./card-content"
 
 export function LoadMore() {
@@ -12,16 +12,17 @@ export function LoadMore() {
 
   const { ref, inView } = useInView()
 
-  const loadMoreResults = async offset => {
-    const { results, nextPage } = await fetchFeedContent({ offset })
-    setFeedContent({ results: [...feedContent.results, ...results], nextPage })
-  }
-
   useEffect(() => {
+    const loadMoreResults = async offset => {
+      const { results, nextPage } = await fetchFeedContent({ offset })
+      setFeedContent({ results: [...feedContent.results, ...results], nextPage })
+    }
+
     if (inView) {
       loadMoreResults(offset)
       setOffset(prevOffset => prevOffset + 24)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView])
 
   return (
