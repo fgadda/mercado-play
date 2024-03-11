@@ -29,11 +29,11 @@ export function LoadMore() {
     <>
       <CardContent results={feedContent.results} />
       {feedContent.nextPage !== null && (
-        <div
-          className="col-span-1 flex items-center justify-center p-4 sm:col-span-2 md:col-span-3"
-          ref={ref}
-        >
-          spinner hola hola
+        <div className="mt-6 flex w-full">
+          <div
+            ref={ref}
+            className="mx-auto h-14 w-14 animate-spin rounded-full border-4 border-gray-300 border-t-gray-400"
+          />
         </div>
       )}
     </>
