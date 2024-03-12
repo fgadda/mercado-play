@@ -9,7 +9,7 @@ export const filters = {
       href: "/peliculas/top-10",
     },
     {
-      name: "Películas Premiadas",
+      name: "Películas premiadas",
       href: "/peliculas/peliculas-premiadas",
     },
     {
