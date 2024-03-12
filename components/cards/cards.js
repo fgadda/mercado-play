@@ -15,7 +15,7 @@ function Card({ content: { title, thumbnail, tag, subtitle } }) {
         <p className="text-lg font-semibold leading-5">{title}</p>
         <p className="truncate text-xs">{subtitle}</p>
         <div>
-          <p className="mt-1 inline-block rounded-sm bg-gray-100 px-1.5 py-1 text-xs font-semibold">
+          <p className="mt-1 inline-block rounded-sm bg-gray-100 px-1.5 py-0.5 text-xs font-semibold">
             {tag}
           </p>
         </div>
