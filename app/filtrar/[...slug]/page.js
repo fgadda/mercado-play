@@ -1,12 +1,11 @@
 import { redirect } from "next/navigation"
-import Link from "next/link"
-import clsx from "clsx"
 
 import CardWrapper from "@/components/cards/cards"
 import { LoadMore } from "@/components/cards/load-more"
 import { fetchFeedContent } from "@/lib/fetch-feed-content"
 import { filters } from "@/contants/filters"
 import { links } from "@/contants/links"
+import Filters from "@/components/filters"
 
 export default async function Page({
   params: {
@@ -28,20 +27,8 @@ export default async function Page({
   return (
     <>
       {viewHasFilter && (
-        <section className="flex items-center gap-5">
-          {filters[contentType].map(route => {
-            return (
-              <Link
-                key={route.name}
-                href={`/filtrar${route.href}`}
-                className={clsx("px-2 hover:text-primary", {
-                  "text-primary": `/filtrar${route.href}` === `/filtrar/${resolvedPath}`,
-                })}
-              >
-                {route.name}
-              </Link>
-            )
-          })}
+        <section className="mt-4 flex items-center gap-5">
+          <Filters contentType={contentType} resolvedPath={resolvedPath} />
         </section>
       )}
       <section className="mt-8">
