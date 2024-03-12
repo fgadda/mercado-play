@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
 
 import { fetchFeedContent } from "@/lib/fetch-feed-content"
-import CardContent from "./card-content"
+import CardWrapper from "./cards"
 
 export function LoadMore() {
   const [feedContent, setFeedContent] = useState({ results: [], nextPage: {} })
@@ -27,12 +27,12 @@ export function LoadMore() {
 
   return (
     <>
-      <CardContent results={feedContent.results} />
+      <CardWrapper results={feedContent.results} />
       {feedContent.nextPage !== null && (
         <div className="mt-6 flex w-full">
           <div
             ref={ref}
-            className="mx-auto h-14 w-14 animate-spin rounded-full border-4 border-gray-300 border-t-gray-400"
+            className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-gray-400"
           />
         </div>
       )}
