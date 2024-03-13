@@ -3,11 +3,11 @@ import clsx from "clsx"
 
 import { filters } from "@/contants/filters"
 
-export default function Filters({ contentType, resolvedPath }) {
+export default function Filters({ activeView, currentSlug }) {
   return (
     <section className="no-scrollbar flex w-full items-center gap-2 overflow-x-scroll">
-      {filters[contentType].map(route => {
-        const linkIsActive = `/filtrar${route.href}` === `/filtrar/${resolvedPath}`
+      {filters[activeView].map(route => {
+        const linkIsActive = `/filtrar${route.href}` === `/filtrar/${currentSlug}`
         return (
           <Link
             key={route.name}
