@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import clsx from "clsx"
 
-import { links } from "@/contants/links"
+import { links } from "@/constants/links"
 
 export default function Tabs() {
   const pathname = usePathname()

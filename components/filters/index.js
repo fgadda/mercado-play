@@ -1,7 +1,7 @@
 import Link from "next/link"
 import clsx from "clsx"
 
-import { filters } from "@/contants/filters"
+import { filters } from "@/constants/filters"
 
 export default function Filters({ activeView, currentSlug }) {
   return (
