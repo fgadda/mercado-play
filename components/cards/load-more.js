@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer"
 import { fetchFeedContent } from "@/lib/fetch-feed-content"
 import CardWrapper from "./cards"
 
-export function LoadMore() {
+export default function LoadMore() {
   const [feedContent, setFeedContent] = useState({ results: [], nextPage: {} })
   const [offset, setOffset] = useState(24)
 
