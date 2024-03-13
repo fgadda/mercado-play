@@ -10,7 +10,7 @@ export default function Header({ children }) {
 
   return (
     <div
-      className={clsx("z-10 mx-auto max-w-[1308px] bg-[#f5f5f5] px-[54px] pt-[58px] md:pt-[51px]", {
+      className={clsx("z-10 -mx-[10px] bg-[#f5f5f5] px-[10px] pt-[58px] md:pt-[51px]", {
         "sticky left-0 right-0 top-0": scrollDirection === "up",
       })}
     >
