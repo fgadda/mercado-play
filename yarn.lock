@@ -522,6 +522,11 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
+bitmovin-player@^8.156.0:
+  version "8.156.0"
+  resolved "https://registry.yarnpkg.com/bitmovin-player/-/bitmovin-player-8.156.0.tgz#d75c76421e2eeb2377ceb4749ad62609c4891e41"
+  integrity sha512-shJ8cmxY/qwvD1LxpkwnAjSZjfJWXk4qQ/ARVUEa1Yx62ScfrCJKNXqU7tII61uSa5wV3pTY9bBY2WxQ9O/Exw==
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
