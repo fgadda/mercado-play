@@ -1,10 +1,10 @@
-import CardWrapper from "@/components/cards/cards"
-import LoadMore from "@/components/cards/load-more"
+import CardWrapper from "@/components/home/cards"
+import LoadMore from "@/components/home/load-more"
 import { fetchFeedContent } from "@/lib/fetch-feed-content"
 import { filters } from "@/constants/filters"
-import Header from "@/components/header"
-import Tabs from "@/components/tabs"
-import Filters from "@/components/filters"
+import Header from "@/components/layout/header/header"
+import Tabs from "@/components/layout/header/tabs"
+import Filters from "@/components/layout/header/filters"
 
 export default async function Page({
   params: {
@@ -12,11 +12,9 @@ export default async function Page({
   },
 }) {
   const currentSlug = filter ? `${activeView}/${filter}` : activeView
-  const { results } = await fetchFeedContent({
-    offset: 0,
-    filter: currentSlug,
-  })
   const viewHasFilters = Object.keys(filters).includes(activeView)
+
+  const { results, nextPage } = await fetchFeedContent({ filter: currentSlug })
 
   return (
     <>
@@ -33,7 +31,7 @@ export default async function Page({
 
       <section className="mt-8">
         <CardWrapper results={results} />
-        <LoadMore />
+        {nextPage && <LoadMore currentSlug={currentSlug} />}
       </section>
     </>
   )

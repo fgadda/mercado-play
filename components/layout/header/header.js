@@ -2,16 +2,14 @@
 
 import clsx from "clsx"
 
-import useScrollDirection from "@/hooks/useScrollDirection"
-import Searchbar from "@/components/search"
+// import useScrollDirection from "@/hooks/useScrollDirection"
+import Searchbar from "@/components/layout/header/search"
 
 export default function Header({ children }) {
-  const { scrollDirection } = useScrollDirection()
-
   return (
     <div
       className={clsx("z-10 -mx-[10px] bg-[#f5f5f5] px-[10px] pt-[58px] md:pt-[51px]", {
-        "sticky left-0 right-0 top-0": scrollDirection === "up",
+        // "sticky left-0 right-0 top-0": scrollDirection === "up",
       })}
     >
       <div className="flex items-center justify-between">

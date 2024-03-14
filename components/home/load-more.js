@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer"
 import { fetchFeedContent } from "@/lib/fetch-feed-content"
 import CardWrapper from "./cards"
 
-export default function LoadMore() {
+export default function LoadMore({ currentSlug }) {
   const [feedContent, setFeedContent] = useState({ results: [], nextPage: {} })
   const [offset, setOffset] = useState(24)
 
@@ -14,7 +14,7 @@ export default function LoadMore() {
 
   useEffect(() => {
     const loadMoreResults = async offset => {
-      const { results, nextPage } = await fetchFeedContent({ offset })
+      const { results, nextPage } = await fetchFeedContent({ offset, filter: currentSlug })
       setFeedContent({ results: [...feedContent.results, ...results], nextPage })
     }
 
@@ -28,7 +28,7 @@ export default function LoadMore() {
   return (
     <>
       <CardWrapper results={feedContent.results} />
-      {feedContent.nextPage !== null && (
+      {feedContent.nextPage && (
         <div className="mt-6 flex w-full">
           <div
             ref={ref}

@@ -1,8 +1,9 @@
-import CardWrapper from "@/components/cards/cards"
-import LoadMore from "@/components/cards/load-more"
+import CardWrapper from "@/components/home/cards"
+import LoadMore from "@/components/home/load-more"
 import { fetchFeedContent } from "@/lib/fetch-feed-content"
-import Header from "@/components/header"
-import Tabs from "@/components/tabs"
+import Header from "@/components/layout/header/header"
+import Tabs from "@/components/layout/header/tabs"
+// import BitmovinPlayer from "@/components/bitmovin-player/player"
 
 export default async function Home() {
   const { results } = await fetchFeedContent({})
@@ -14,6 +15,10 @@ export default async function Home() {
           <Tabs />
         </section>
       </Header>
+
+      {/* <section>
+        <BitmovinPlayer />
+      </section> */}
 
       <section className="mt-8">
         <CardWrapper results={results} />
