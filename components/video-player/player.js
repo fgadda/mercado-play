@@ -9,15 +9,14 @@ function BitmovinPlayer() {
   const [player, setPlayer] = useState(null)
 
   const playerConfig = {
-    key: "dcbf46e6-c70f-400d-a0da-3d703fb6143d",
+    key: "YOUR KEY HERE",
     ui: false,
   }
 
   const playerSource = {
-    dash: "https://mdstrm.com/video/659ef511c183b27ac3bd0cac.mpd",
-    hls: "https://mdstrm.com/video/659ef511c183b27ac3bd0cac.m3u8",
-    poster:
-      "https://thumbs.cdn.mdstrm.com/thumbs/62fd48e7a1324543b4a28c0d/659ef511c183b27ac3bd0cac/preview_659ef511c183b27ac3bd0cac.vtt",
+    dash: "https://bitdash-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
+    hls: "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+    poster: "https://bitdash-a.akamaihd.net/content/MI201109210084_1/poster.jpg",
   }
   const playerDiv = useRef()
 
