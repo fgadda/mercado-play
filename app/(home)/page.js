@@ -3,10 +3,9 @@ import LoadMore from "@/components/home/load-more"
 import { fetchFeedContent } from "@/lib/fetch-feed-content"
 import Header from "@/components/layout/header/header"
 import Tabs from "@/components/layout/header/tabs"
-// import BitmovinPlayer from "@/components/bitmovin-player/player"
 
-export default async function Home() {
-  const { results } = await fetchFeedContent({})
+export default async function Page() {
+  const { results, nextPage } = await fetchFeedContent({})
 
   return (
     <>
@@ -16,13 +15,9 @@ export default async function Home() {
         </section>
       </Header>
 
-      {/* <section>
-        <BitmovinPlayer />
-      </section> */}
-
       <section className="mt-8">
         <CardWrapper results={results} />
-        <LoadMore />
+        {nextPage && <LoadMore />}
       </section>
     </>
   )
