@@ -14,7 +14,7 @@ export default function Searchbar() {
       <div className="px-0.5">
         <input
           type="text"
-          className="md:transition-width box-border h-8 w-full rounded-2xl border border-gray-400/80 ps-[30px] text-sm placeholder-gray-500 focus:border-primary focus:outline-none md:duration-300 md:ease-in-out md:focus:w-[22rem]"
+          className="md:transition-width box-border h-8 w-full rounded-2xl border border-gray-400/80 ps-[30px] text-sm placeholder-gray-500/90 focus:border-primary focus:outline-none md:duration-300 md:ease-in-out md:focus:w-[22rem]"
           placeholder="¿Qué querés ver hoy?"
         />
       </div>
