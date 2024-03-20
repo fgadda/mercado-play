@@ -1,9 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 
-// import BitmovinPlayer from "@/components/video-player/player"
-import Modal from "@/components/dialog/dialog"
+// import BitmovinPlayer from "@/components/ver/player"
 import Header from "@/components/layout/header/header"
+import ShowDetails from "@/components/ver/content-detail"
 import { fetchMovie } from "@/lib/fetch-feed-content"
 
 export default async function Page({
@@ -32,12 +32,7 @@ export default async function Page({
                 </div>
               </div>
               <p className="line-clamp-2 leading-5">{description}</p>
-              <button className="me-auto font-semibold text-primary">Conocer más</button>
-              <Modal
-                trigger={<button>click me</button>}
-                title="Alcatraz: fuga imposible"
-                description={<div className="bg-red-100">hola hola hola </div>}
-              />
+              <ShowDetails />
             </div>
           </div>
         </section>
@@ -54,12 +49,13 @@ export default async function Page({
                     alt={title}
                     width="130"
                     height="76"
-                    className="h-auto w-auto rounded-md object-cover"
+                    className="rounded-md object-cover"
+                    style={{ height: 76, width: 130 }}
                     priority
                   />
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-lg font-semibold leading-5">{title}</span>
-                    <span className="truncate text-xs">{subtitle}</span>
+                    <span className="truncate text-lg font-semibold leading-5">{title}</span>
+                    <span className="text-xs">{subtitle}</span>
                     <div>
                       <span className="mt-1 rounded-sm bg-gray-100 px-1.5 py-0.5 text-xs font-semibold">
                         {tag}
