@@ -32,7 +32,7 @@ export default async function Page({
                 </div>
               </div>
               <p className="line-clamp-2 leading-5">{description}</p>
-              <ShowDetails />
+              <ShowDetails contentId={contentId} />
             </div>
           </div>
         </section>
@@ -44,17 +44,19 @@ export default async function Page({
             {components.map(({ title, url, image, subtitle, tag }) => (
               <article key={title}>
                 <Link href={url} className="flex gap-4 border-b px-5 py-4 hover:bg-gray-100/80">
-                  <Image
-                    src={image}
-                    alt={title}
-                    width="130"
-                    height="76"
-                    className="rounded-md object-cover"
-                    style={{ height: 76, width: 130 }}
-                    priority
-                  />
+                  <div className="h-[76px] w-[135px]">
+                    <Image
+                      src={image}
+                      alt={title}
+                      width="135"
+                      height="76"
+                      className="rounded-md object-cover"
+                      style={{ minWidth: 135, maxHeight: 76 }}
+                      priority
+                    />
+                  </div>
                   <div className="flex flex-col gap-1.5">
-                    <span className="truncate text-lg font-semibold leading-5">{title}</span>
+                    <span className="line-clamp-1 text-lg font-semibold leading-5">{title}</span>
                     <span className="text-xs">{subtitle}</span>
                     <div>
                       <span className="mt-1 rounded-sm bg-gray-100 px-1.5 py-0.5 text-xs font-semibold">
