@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 
 import Modal from "@/components/modal/modal"
-import { fetchContentDetail } from "@/lib/fetch-feed-content"
+import { fetchContentDetail } from "@/lib/api"
 
 export default function ContentDetail({ contentId }) {
   const [content, setContent] = useState({})

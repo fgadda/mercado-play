@@ -4,7 +4,7 @@ import Link from "next/link"
 // import BitmovinPlayer from "@/components/ver/player"
 import Header from "@/components/layout/header/header"
 import ShowDetails from "@/components/ver/content-detail"
-import { fetchMovie } from "@/lib/fetch-feed-content"
+import { fetchMovie } from "@/lib/api"
 
 export default async function Page({
   params: {

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
 
-import { fetchFeedContent } from "@/lib/fetch-feed-content"
+import { fetchFeedContent } from "@/lib/api"
 import CardWrapper from "./cards"
 
 export default function LoadMore({ currentSlug }) {

@@ -1,6 +1,6 @@
 import CardWrapper from "@/components/home/cards"
 import LoadMore from "@/components/home/load-more"
-import { fetchFeedContent } from "@/lib/fetch-feed-content"
+import { fetchFeedContent } from "@/lib/api"
 import { filters } from "@/constants/filters"
 import Header from "@/components/layout/header/header"
 import Tabs from "@/components/layout/header/tabs"
