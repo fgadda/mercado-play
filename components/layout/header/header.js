@@ -1,6 +1,7 @@
 "use client"
 
 import clsx from "clsx"
+import Link from "next/link"
 
 // import useScrollDirection from "@/hooks/useScrollDirection"
 import Searchbar from "@/components/layout/header/search"
@@ -8,11 +9,14 @@ import Searchbar from "@/components/layout/header/search"
 export default function Header({ children }) {
   return (
     <div
-      className={clsx("z-10 -mx-[10px] bg-[#f5f5f5] px-[10px] pt-[58px] md:pt-[51px]", {
+      className={clsx("z-10 -mx-[10px] bg-[#f5f5f5] px-[10px] pt-[58px] md:pt-[26px]", {
         // "sticky left-0 right-0 top-0": scrollDirection === "up",
       })}
     >
-      <div className="flex items-center justify-between">
+      <Link className="h-[23px] text-xs font-semibold text-primary" href="/">
+        Volver al inicio
+      </Link>
+      <div className="mt-0.5 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <h1 className="text-[28px] font-semibold">Mercado Play</h1>
           <div className="hidden h-5 border-r border-gray-300 md:block"></div>
