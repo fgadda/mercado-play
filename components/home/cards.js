@@ -1,6 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import LoadMore from "@/components/home/load-more"
+import { fetchFeedContent } from "@/lib/api"
+
 function Card({ content: { title, thumbnail, tag, subtitle, url } }) {
   return (
     <article className="rounded-b-md bg-white drop-shadow transition duration-200 ease-out hover:drop-shadow-lg">
@@ -27,7 +30,7 @@ function Card({ content: { title, thumbnail, tag, subtitle, url } }) {
   )
 }
 
-export default function CardWrapper({ results }) {
+function Cards({ results }) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {results.map(result => (
@@ -36,3 +39,15 @@ export default function CardWrapper({ results }) {
     </div>
   )
 }
+
+export default async function CardWrapper({ filter }) {
+  const { results, nextPage } = await fetchFeedContent({ filter })
+  return (
+    <>
+      <Cards results={results} />
+      {nextPage && <LoadMore currentSlug={filter} />}
+    </>
+  )
+}
+
+CardWrapper.Cards = Cards

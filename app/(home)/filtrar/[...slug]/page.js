@@ -1,10 +1,11 @@
+import { Suspense } from "react"
+
 import CardWrapper from "@/components/home/cards"
-import LoadMore from "@/components/home/load-more"
-import { fetchFeedContent } from "@/lib/api"
 import { filters } from "@/constants/filters"
 import Header from "@/components/layout/header/header"
 import Tabs from "@/components/layout/header/tabs"
 import Filters from "@/components/layout/header/filters"
+import { cn } from "@/lib/utils"
 
 export default async function Page({
   params: {
@@ -13,8 +14,6 @@ export default async function Page({
 }) {
   const currentSlug = filter ? `${activeView}/${filter}` : activeView
   const viewHasFilters = Object.keys(filters).includes(activeView)
-
-  const { results, nextPage } = await fetchFeedContent({ filter: currentSlug })
 
   return (
     <>
@@ -29,9 +28,16 @@ export default async function Page({
         )}
       </Header>
 
-      <section className="mt-8">
-        <CardWrapper results={results} />
-        {nextPage && <LoadMore currentSlug={currentSlug} />}
+      <section className={cn("mt-8", { "mt-4": viewHasFilters })}>
+        <Suspense
+          fallback={
+            <div className="flex">
+              <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-gray-400" />
+            </div>
+          }
+        >
+          <CardWrapper filter={currentSlug} />
+        </Suspense>
       </section>
     </>
   )

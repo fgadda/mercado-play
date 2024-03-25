@@ -27,7 +27,9 @@ export default function LoadMore({ currentSlug }) {
 
   return (
     <>
-      <CardWrapper results={feedContent.results} />
+      <div className="mt-4">
+        <CardWrapper.Cards results={feedContent.results} />
+      </div>
       {feedContent.nextPage && (
         <div className="mt-6 flex w-full">
           <div

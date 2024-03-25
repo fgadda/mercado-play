@@ -1,12 +1,10 @@
+import { Suspense } from "react"
+
 import CardWrapper from "@/components/home/cards"
-import LoadMore from "@/components/home/load-more"
-import { fetchFeedContent } from "@/lib/api"
 import Header from "@/components/layout/header/header"
 import Tabs from "@/components/layout/header/tabs"
 
 export default async function Page() {
-  const { results, nextPage } = await fetchFeedContent({})
-
   return (
     <>
       <Header>
@@ -16,8 +14,15 @@ export default async function Page() {
       </Header>
 
       <section className="mt-8">
-        <CardWrapper results={results} />
-        {nextPage && <LoadMore />}
+        <Suspense
+          fallback={
+            <div className="flex">
+              <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-gray-400" />
+            </div>
+          }
+        >
+          <CardWrapper />
+        </Suspense>
       </section>
     </>
   )
