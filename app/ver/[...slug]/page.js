@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 
-// import BitmovinPlayer from "@/components/ver/player"
 import Header from "@/components/layout/header/header"
 import ShowDetails from "@/components/ver/content-detail"
 import { fetchMovie } from "@/lib/api"
+import { cn } from "@/lib/utils"
 
 export default async function Page({
   params: {
@@ -16,21 +16,21 @@ export default async function Page({
     <>
       <Header hasBackButton />
 
-      <div className="mt-7 flex flex-col bg-white lg:flex-row">
+      <div className="mt-7 flex flex-col rounded-md bg-white shadow-sm lg:flex-row">
         <section className="relative flex-[3] border-r">
           <div className="sticky left-0 right-0 top-0">
-            <div className="relative aspect-video bg-black">
+            <div className="relative aspect-video rounded-tl-md bg-black">
               <Image
                 src={image}
                 width="719"
                 height="405"
                 alt="image"
-                className="h-full w-full object-contain"
+                className="h-full w-full rounded-tl-md object-contain"
                 priority
               />
               <div
                 style={{ backgroundColor: "rgba(0,0,0,.6)" }}
-                className="absolute inset-0 flex cursor-not-allowed items-center justify-center"
+                className="absolute inset-0 flex cursor-not-allowed items-center justify-center rounded-tl-md"
               >
                 <div className="flex flex-col gap-6">
                   <svg
@@ -76,13 +76,18 @@ export default async function Page({
           </div>
         </section>
         <section className="relative flex flex-[2] flex-col">
-          <div className="sticky left-0 right-0 top-0 border-b bg-white px-5 py-2">
+          <div className="sticky left-0 right-0 top-0 rounded-t-md border-b bg-white px-5 py-2">
             <span className="text-lg font-semibold">También te puede interesar...</span>
           </div>
           <div className="flex flex-col">
-            {components.map(({ title, url, image, subtitle, tag }) => (
+            {components.map(({ title, url, image, subtitle, tag }, index) => (
               <article key={title}>
-                <Link href={url} className="flex gap-4 border-b px-5 py-4 hover:bg-gray-100/80">
+                <Link
+                  href={url}
+                  className={cn("flex gap-4 border-b px-5 py-4 hover:bg-gray-100/80", {
+                    "border-none": components.length - 1 === index,
+                  })}
+                >
                   <div className="h-[76px] w-[135px]">
                     <Image
                       src={image}
