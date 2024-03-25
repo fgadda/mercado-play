@@ -11,7 +11,7 @@ export default async function Page({
     slug: [, contentId],
   },
 }) {
-  const { title, description, tag, subtitle, components, image } = await fetchMovie({ contentId })
+  const { title, description, tags, subtitle, components, image } = await fetchMovie({ contentId })
   return (
     <>
       <Header hasBackButton />
@@ -64,10 +64,19 @@ export default async function Page({
               <div className="gap flex flex-col">
                 <span className="text-2xl font-semibold leading-[30px]">{title}</span>
                 <span>{subtitle}</span>
-                <div className="mt-1">
-                  <div className="inline-block rounded-sm bg-gray-100 px-1.5 py-0.5 text-xs font-semibold">
-                    {tag}
-                  </div>
+                <div className="mt-1 flex gap-2">
+                  {tags.map((component, gi) => (
+                    <p className="text-sm" key={gi}>
+                      <span
+                        className={cn(
+                          "mt-1 rounded-sm bg-gray-100 px-1.5 py-0.5 text-xs font-semibold",
+                          { "font-normal": component.props.style === "regular" },
+                        )}
+                      >
+                        {component.props.label}
+                      </span>
+                    </p>
+                  ))}
                 </div>
               </div>
               <p className="line-clamp-2 leading-5">{description}</p>
