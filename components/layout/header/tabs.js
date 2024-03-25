@@ -2,9 +2,9 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import clsx from "clsx"
 
 import { links } from "@/constants/links"
+import { cn } from "@/lib/utils"
 
 export default function Tabs() {
   const pathname = usePathname()
@@ -15,7 +15,7 @@ export default function Tabs() {
           <Link
             key={link.name}
             href={link.href}
-            className={clsx("inline-block py-3 hover:text-primary md:py-2", {
+            className={cn("inline-block py-3 hover:text-primary md:py-2", {
               "border-b-2 border-primary text-primary":
                 link.href === "/" ? pathname === link.href : pathname.includes(link.href),
             })}
