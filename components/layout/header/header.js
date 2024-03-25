@@ -2,17 +2,12 @@
 
 import Link from "next/link"
 
-// import useScrollDirection from "@/hooks/useScrollDirection"
 import Searchbar from "@/components/layout/header/search"
 import { cn } from "@/lib/utils"
 
 export default function Header({ children, hasBackButton }) {
   return (
-    <div
-      className={cn("z-10 -mx-[10px] bg-[#f5f5f5] px-[10px] pt-[58px] md:pt-[26px]", {
-        // "sticky left-0 right-0 top-0": scrollDirection === "up",
-      })}
-    >
+    <div className="-mx-[10px] bg-[#f5f5f5] px-[10px] pt-[58px] md:pt-[26px]">
       <Link
         href="/"
         className={cn("invisible h-[23px] text-xs font-semibold text-primary", {
