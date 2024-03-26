@@ -105,6 +105,7 @@ export default async function Page({
                       height="76"
                       className="rounded-md object-cover"
                       style={{ minWidth: 135, maxHeight: 76 }}
+                      priority
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
