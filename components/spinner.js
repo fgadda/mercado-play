@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import { cva } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -14,6 +15,6 @@ const spinnerVariants = cva("h-12 w-12 animate-spin rounded-full border-4", {
   },
 })
 
-export default function Spinner({ variant, className }) {
-  return <div className={cn(spinnerVariants({ variant, className }))} />
-}
+export default forwardRef(function Spinner({ variant, className, ...props }, ref) {
+  return <div ref={ref} className={cn(spinnerVariants({ variant, className }))} {...props} />
+})
