@@ -28,7 +28,7 @@ const proximaNova = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es-AR">
       <body className={proximaNova.className}>
         <Navbar />
         <main className="relative min-h-screen">
