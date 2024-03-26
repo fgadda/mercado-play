@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 
-import CardWrapper from "@/components/home/cards"
+import CardWrapper from "@/components/home/card-wrapper"
 import Header from "@/components/layout/header/header"
 import Tabs from "@/components/layout/header/tabs"
 import Spinner from "@/components/spinner"

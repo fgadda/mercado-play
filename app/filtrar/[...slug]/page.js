@@ -1,11 +1,11 @@
 import { Suspense } from "react"
 
-import CardWrapper from "@/components/home/cards"
 import { filters } from "@/constants/filters"
 import Header from "@/components/layout/header/header"
 import Tabs from "@/components/layout/header/tabs"
 import Filters from "@/components/layout/header/filters"
 import Spinner from "@/components/spinner"
+import CardWrapper from "@/components/home/card-wrapper"
 import { cn } from "@/lib/utils"
 
 export default async function Page({

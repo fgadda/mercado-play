@@ -9,6 +9,15 @@ export default function Modal({ open, onOpenChange, children }) {
   )
 }
 
+const CloseIcon = () => (
+  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="rgba(0,0,0,0.55)">
+    <path
+      d="M4.35156 5.19496L9.15406 9.99746L4.35156 14.8L5.20009 15.6485L10.0026 10.846L14.7963 15.6397L15.6449 14.7912L10.8511 9.99746L15.6449 5.20371L14.7963 4.35518L10.0026 9.14894L5.20009 4.34644L4.35156 5.19496Z"
+      fill="rgba(0,0,0,0.55)"
+    ></path>
+  </svg>
+)
+
 function ModalContent({ title, children }) {
   return (
     <Dialog.Portal>
@@ -18,18 +27,7 @@ function ModalContent({ title, children }) {
           <Dialog.Title className="text-[28px] font-semibold leading-none">{title}</Dialog.Title>
           <Dialog.Close asChild>
             <button className="h-[25px] w-[25px]" aria-label="Close">
-              <svg
-                aria-hidden="true"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="rgba(0,0,0,0.55)"
-              >
-                <path
-                  d="M4.35156 5.19496L9.15406 9.99746L4.35156 14.8L5.20009 15.6485L10.0026 10.846L14.7963 15.6397L15.6449 14.7912L10.8511 9.99746L15.6449 5.20371L14.7963 4.35518L10.0026 9.14894L5.20009 4.34644L4.35156 5.19496Z"
-                  fill="rgba(0,0,0,0.55)"
-                ></path>
-              </svg>
+              <CloseIcon />
             </button>
           </Dialog.Close>
         </div>

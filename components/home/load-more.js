@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer"
 
 import Spinner from "@/components/spinner"
 import { fetchFeedContent } from "@/lib/api"
-import CardWrapper from "./cards"
+import CardWrapper from "./card-wrapper"
 
 export default function LoadMore({ currentSlug }) {
   const [feedContent, setFeedContent] = useState({ results: [], nextPage: {} })
