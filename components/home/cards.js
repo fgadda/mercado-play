@@ -9,7 +9,7 @@ function Card({ content: { title, thumbnail, tag, subtitle, url } }) {
     <article className="rounded-b-md bg-white drop-shadow transition duration-200 ease-out hover:drop-shadow-lg">
       <Link href={url}>
         <Image
-          className="rounded-t-md"
+          className="aspect-video rounded-t-md object-cover"
           src={thumbnail}
           width="500"
           height="500"
