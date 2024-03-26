@@ -7,6 +7,8 @@ import "./globals.css"
 
 export const metadata = {
   title: "Mercado Play - Series y películas gratis",
+  description:
+    "Mercado Play es una sección de Mercado Libre en la que vas a encontrar contenidos gratis, de forma fácil, rápida y segura",
 }
 
 const proximaNova = localFont({
