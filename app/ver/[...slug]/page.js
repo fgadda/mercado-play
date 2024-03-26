@@ -10,7 +10,7 @@ export default async function Page({
     slug: [, contentId],
   },
 }) {
-  const { title, description, tags, subtitle, components, image } = await fetchMovie({ contentId })
+  const { title, description, tags, subtitle, components, image } = await fetchMovie(contentId)
   return (
     <>
       <Header hasBackButton />
