@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
 
+import Spinner from "@/components/spinner"
 import { fetchFeedContent } from "@/lib/api"
 import CardWrapper from "./cards"
 
@@ -32,10 +33,7 @@ export default function LoadMore({ currentSlug }) {
       </div>
       {feedContent.nextPage && (
         <div className="mt-6 flex w-full">
-          <div
-            ref={ref}
-            className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-gray-400"
-          />
+          <Spinner ref={ref} className="mx-auto" />
         </div>
       )}
     </>
