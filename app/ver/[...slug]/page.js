@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import Header from "@/components/layout/header/header"
@@ -20,13 +19,12 @@ export default async function Page({
         <section className="relative flex-[3] border-r">
           <div className="sticky left-0 right-0 top-0">
             <div className="relative aspect-video rounded-tl-md bg-black">
-              <Image
+              <img
                 src={image}
                 width="719"
                 height="405"
                 alt="image"
                 className="h-full w-full rounded-tl-md object-contain"
-                priority
               />
               <div
                 style={{ backgroundColor: "rgba(0,0,0,.6)" }}
@@ -98,14 +96,13 @@ export default async function Page({
                   })}
                 >
                   <div className="h-[76px] w-[135px]">
-                    <Image
+                    <img
                       src={image}
                       alt={title}
                       width="135"
                       height="76"
                       className="rounded-md object-cover"
                       style={{ minWidth: 135, maxHeight: 76 }}
-                      priority
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">

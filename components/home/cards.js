@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import LoadMore from "@/components/home/load-more"
@@ -8,13 +7,12 @@ function Card({ content: { title, thumbnail, tag, subtitle, url } }) {
   return (
     <article className="rounded-b-md bg-white drop-shadow transition duration-200 ease-out hover:drop-shadow-lg">
       <Link href={url}>
-        <Image
+        <img
           className="aspect-video rounded-t-md object-cover"
           src={thumbnail}
           width="500"
           height="500"
           alt={title}
-          priority
         />
         <div className="flex flex-col gap-1.5 px-4 py-4 leading-none">
           <p className="text-lg font-semibold leading-5">{title}</p>
