@@ -3,6 +3,7 @@ import { Suspense } from "react"
 import CardWrapper from "@/components/home/cards"
 import Header from "@/components/layout/header/header"
 import Tabs from "@/components/layout/header/tabs"
+import Spinner from "@/components/spinner"
 
 export default async function Page() {
   return (
@@ -17,7 +18,7 @@ export default async function Page() {
         <Suspense
           fallback={
             <div className="flex">
-              <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-gray-400" />
+              <Spinner className="mx-auto" />
             </div>
           }
         >

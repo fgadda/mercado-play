@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 
 import Modal from "@/components/modal/modal"
+import Spinner from "@/components/spinner"
 import { fetchContentDetail } from "@/lib/api"
 
 export default function ContentDetail({ contentId }) {
@@ -29,7 +30,7 @@ export default function ContentDetail({ contentId }) {
       <Modal.Content title={content?.title}>
         {isLoading && !contentHasData ? (
           <div className="flex h-[300px]">
-            <div className="m-auto mx-auto h-12 w-12 animate-spin rounded-full border-4 border-transparent border-t-primary" />
+            <Spinner variant="primary" className="m-auto" />
           </div>
         ) : (
           <div className="mt-7 flex gap-7">

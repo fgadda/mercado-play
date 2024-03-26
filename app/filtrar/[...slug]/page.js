@@ -5,6 +5,7 @@ import { filters } from "@/constants/filters"
 import Header from "@/components/layout/header/header"
 import Tabs from "@/components/layout/header/tabs"
 import Filters from "@/components/layout/header/filters"
+import Spinner from "@/components/spinner"
 import { cn } from "@/lib/utils"
 
 export default async function Page({
@@ -32,7 +33,7 @@ export default async function Page({
         <Suspense
           fallback={
             <div className="flex">
-              <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-gray-400" />
+              <Spinner className="mx-auto" />
             </div>
           }
         >
