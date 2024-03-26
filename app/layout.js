@@ -1,7 +1,6 @@
-import localFont from "next/font/local"
-
 import Navbar from "@/components/layout/navbar"
 import Footer from "@/components/layout/footer"
+import { proximaNova } from "@/fonts"
 
 import "./globals.css"
 
@@ -10,21 +9,6 @@ export const metadata = {
   description:
     "Mercado Play es una sección de Mercado Libre en la que vas a encontrar contenidos gratis, de forma fácil, rápida y segura",
 }
-
-const proximaNova = localFont({
-  src: [
-    {
-      path: "../fonts/Proxima-Nova-Regular.otf",
-      weight: "400",
-      subsets: ["latin"],
-    },
-    {
-      path: "../fonts/Proxima-Nova-Semibold.otf",
-      weight: "600",
-      subsets: ["latin"],
-    },
-  ],
-})
 
 export default function RootLayout({ children }) {
   return (
