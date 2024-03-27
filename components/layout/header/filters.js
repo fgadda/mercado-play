@@ -12,6 +12,7 @@ export default function Filters({ activeView, currentSlug }) {
           <Link
             key={route.name}
             href={`/filtrar${route.href}`}
+            prefetch={false}
             className={cn(
               "flex h-[32px] items-center text-nowrap rounded-3xl border border-gray-500/70 px-3 text-sm md:text-base",
               {
