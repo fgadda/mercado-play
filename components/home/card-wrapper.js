@@ -15,10 +15,10 @@ function Card({ content: { title, thumbnail, tags, subtitle, url } }) {
           height="500"
           alt={title}
         />
-        <div className="flex flex-col gap-1.5 px-4 pb-5 pt-4 leading-none">
-          <p className="text-lg font-semibold leading-5">{title}</p>
-          <p className="truncate text-xs">{subtitle}</p>
-          <div className="mt-1">
+        <div className="flex flex-col gap-2 px-4 pb-5 pt-4">
+          <p className="text-lg font-semibold leading-[22px]">{title}</p>
+          <p className="truncate text-xs leading-none">{subtitle}</p>
+          <div>
             <Tags tags={tags} />
           </div>
         </div>
