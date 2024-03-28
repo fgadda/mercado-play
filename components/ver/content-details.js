@@ -18,7 +18,7 @@ const PlayIcon = () => (
 
 export default function ContentDetails({ image, title, subtitle, tags, description, contentId }) {
   return (
-    <div className="sticky left-0 right-0 top-0">
+    <div className="sticky left-0 right-0 top-0 min-h-screen">
       <div className="relative aspect-video rounded-tl-md bg-black">
         <img
           src={image}
