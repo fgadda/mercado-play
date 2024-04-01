@@ -7,7 +7,7 @@ import Spinner from "@/components/spinner"
 import { fetchFeedContent } from "@/lib/api"
 import CardWrapper from "./card-wrapper"
 
-export default function LoadMore({ currentSlug }) {
+export default function LoadMore({ filter }) {
   const [feedContent, setFeedContent] = useState({ results: [], nextPage: {} })
   const [offset, setOffset] = useState(24)
 
@@ -26,7 +26,7 @@ export default function LoadMore({ currentSlug }) {
     }
 
     const loadMoreResults = async offset => {
-      const { results, nextPage } = await fetchFeedContent({ offset, filter: currentSlug })
+      const { results, nextPage } = await fetchFeedContent({ offset, filter })
       setFeedContent({ results: [...feedContent.results, ...filterResults(results)], nextPage })
     }
 

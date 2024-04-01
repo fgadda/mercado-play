@@ -42,7 +42,7 @@ export default async function CardWrapper({ filter }) {
   return (
     <>
       <Cards results={results} />
-      {nextPage && <LoadMore currentSlug={filter} />}
+      {nextPage && <LoadMore filter={filter} />}
     </>
   )
 }
