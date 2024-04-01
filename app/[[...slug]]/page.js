@@ -18,10 +18,11 @@ export function generateStaticParams() {
 
 export default async function Page({ params }) {
   const { slug } = params
-  const [, activeView, activeFilter] = slug || []
+  const [, view, filter] = slug || []
 
   const path = slug?.join("/")
-  const viewHasFilters = Object.keys(links.filters).includes(activeView)
+  const viewHasFilters = Object.keys(links.filters).includes(view)
+  const filterParam = filter ? [view, filter].join("/") : view
 
   return (
     <>
@@ -31,7 +32,7 @@ export default async function Page({ params }) {
         </section>
         {viewHasFilters && (
           <section className="flex items-center gap-5 py-4">
-            <Filters view={activeView} path={path} />
+            <Filters view={view} path={path} />
           </section>
         )}
       </Header>
@@ -44,7 +45,7 @@ export default async function Page({ params }) {
             </div>
           }
         >
-          <CardWrapper filter={[activeView, activeFilter].join("/")} />
+          <CardWrapper filter={filterParam} />
         </Suspense>
       </section>
     </>
