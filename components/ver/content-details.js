@@ -1,5 +1,6 @@
 import ShowDetails from "@/components/ver/show-details"
 import Tags from "@/components/tags"
+import { MotionDiv, MotionImg } from "@/components/animation"
 
 const PlayIcon = () => (
   <svg
@@ -20,16 +21,22 @@ export default function ContentDetails({ image, title, subtitle, tags, descripti
   return (
     <div className="sticky left-0 right-0 top-0 min-h-screen">
       <div className="relative aspect-video rounded-tl-md bg-black">
-        <img
+        <MotionImg
           src={image}
           width="719"
           height="405"
           alt="image"
           className="h-full w-full rounded-tl-md object-contain"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         />
-        <div
-          style={{ backgroundColor: "rgba(0,0,0,.6)" }}
+        <MotionDiv
           className="absolute inset-0 flex cursor-not-allowed items-center justify-center rounded-tl-md"
+          style={{ backgroundColor: "rgba(0,0,0,.6)" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
         >
           <div className="flex flex-col gap-6">
             <PlayIcon />
@@ -39,7 +46,7 @@ export default function ContentDetails({ image, title, subtitle, tags, descripti
               para reproducir gratis este contenido.
             </span>
           </div>
-        </div>
+        </MotionDiv>
       </div>
       <div className="flex w-full flex-col gap-3 p-5">
         <div className="gap flex flex-col">

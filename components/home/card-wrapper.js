@@ -3,26 +3,29 @@ import Link from "next/link"
 import LoadMore from "@/components/home/load-more"
 import Tags from "@/components/tags"
 import { fetchFeedContent } from "@/lib/api"
+import Template from "@/app/[[...slug]]/template"
 
 function Card({ content: { title, thumbnail, tags, subtitle, url } }) {
   return (
     <article className="rounded-b-md bg-white drop-shadow transition duration-200 ease-out hover:drop-shadow-lg">
-      <Link href={url}>
-        <img
-          className="aspect-video rounded-t-md object-cover"
-          src={thumbnail}
-          width="500"
-          height="500"
-          alt={title}
-        />
-        <div className="flex flex-col gap-2 px-4 pb-5 pt-4">
-          <p className="line-clamp-2 text-lg font-semibold leading-[22px]">{title}</p>
-          <p className="truncate text-xs leading-none">{subtitle}</p>
-          <div>
-            <Tags tags={tags} />
+      <Template>
+        <Link href={url}>
+          <img
+            className="aspect-video rounded-t-md object-cover"
+            src={thumbnail}
+            width="500"
+            height="500"
+            alt={title}
+          />
+          <div className="flex flex-col gap-2 px-4 pb-5 pt-4">
+            <p className="line-clamp-2 text-lg font-semibold leading-[22px]">{title}</p>
+            <p className="truncate text-xs leading-none">{subtitle}</p>
+            <div>
+              <Tags tags={tags} />
+            </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </Template>
     </article>
   )
 }

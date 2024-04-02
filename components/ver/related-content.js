@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import Tags from "@/components/tags"
 import { cn } from "@/lib/utils"
+import Template from "@/app/[[...slug]]/template"
 
 const CardContent = ({ components }) => {
   return components.map(({ title, url, image, subtitle, tags }, index) => (
@@ -40,9 +41,11 @@ export default function RelatedContent({ components }) {
       <div className="sticky left-0 right-0 top-0 rounded-t-md border-b bg-white px-5 py-2">
         <span className="text-lg font-semibold">También te puede interesar...</span>
       </div>
-      <div className="flex flex-col">
-        <CardContent components={components} />
-      </div>
+      <Template>
+        <div className="flex flex-col">
+          <CardContent components={components} />
+        </div>
+      </Template>
     </>
   )
 }
