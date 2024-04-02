@@ -22,7 +22,7 @@ export default function Searchbar() {
 
   const handleSearch = useDebounce(value => {
     fetchSuggestions(value).then(setResults)
-  }, 250)
+  }, 130)
 
   const showOptions = inputIsActive && results.suggested_queries.length > 0
 
