@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer"
 
 import Spinner from "@/components/spinner"
 import { fetchFeedContent } from "@/lib/api"
-import CardWrapper from "./card-wrapper"
+import Cards from "./cards"
 
 export default function LoadMore({ filter }) {
   const [feedContent, setFeedContent] = useState({ results: [], nextPage: {} })
@@ -40,7 +40,7 @@ export default function LoadMore({ filter }) {
   return (
     <>
       <div className="mt-4">
-        <CardWrapper.Cards results={feedContent.results} />
+        <Cards results={feedContent.results} />
       </div>
       {feedContent.nextPage && (
         <div className="mt-6 flex w-full">
