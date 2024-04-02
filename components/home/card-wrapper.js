@@ -16,7 +16,7 @@ function Card({ content: { title, thumbnail, tags, subtitle, url } }) {
           alt={title}
         />
         <div className="flex flex-col gap-2 px-4 pb-5 pt-4">
-          <p className="text-lg font-semibold leading-[22px]">{title}</p>
+          <p className="line-clamp-2 text-lg font-semibold leading-[22px]">{title}</p>
           <p className="truncate text-xs leading-none">{subtitle}</p>
           <div>
             <Tags tags={tags} />
