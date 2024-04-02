@@ -34,4 +34,16 @@ export const links = {
       { name: "Más generos", href: `${seriesBasePath}/mas_genero` },
     ],
   },
+  footer: [
+    "Trabajá con nosotros",
+    "Términos y condiciones",
+    "Cómo cuidamos tu privacidad",
+    "Accesibilidad",
+    "Información al usuario financiero",
+    "Ayuda",
+    "Defensa del Consumidor",
+    "Información sobre seguros",
+    "Cyberfest",
+    "Hot Sale",
+  ],
 }
