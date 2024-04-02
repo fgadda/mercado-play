@@ -1,10 +1,10 @@
-const basePath = "filtrar"
+const basePath = "/filtrar"
 const moviesBasePath = `${basePath}/peliculas`
 const seriesBasePath = `${basePath}/series`
 
 export const links = {
   tabs: [
-    { name: "Para vos", href: "" },
+    { name: "Para vos", href: "/" },
     { name: "Más vistos", href: `${basePath}/mas-vistos` },
     { name: "Películas", href: moviesBasePath },
     { name: "Series", href: seriesBasePath },

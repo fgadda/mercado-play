@@ -6,13 +6,13 @@ import { links } from "@/constants/links"
 export default function Filters({ view, path }) {
   const filters = links.filters[view]
   return (
-    <section className="no-scrollbar flex w-full items-center gap-2 overflow-x-scroll">
-      {filters.map(filter => {
-        const linkIsActive = filter.href === path
+    <div className="no-scrollbar flex w-full items-center gap-2 overflow-x-scroll">
+      {filters.map(({ href, name }) => {
+        const linkIsActive = href === path
         return (
           <Link
-            key={filter.name}
-            href={`/${filter.href}`}
+            key={name}
+            href={href}
             className={cn(
               "flex h-[32px] items-center text-nowrap rounded-3xl border border-gray-500/70 px-3 text-sm md:text-base",
               {
@@ -20,10 +20,10 @@ export default function Filters({ view, path }) {
               },
             )}
           >
-            {filter.name}
+            {name}
           </Link>
         )
       })}
-    </section>
+    </div>
   )
 }
