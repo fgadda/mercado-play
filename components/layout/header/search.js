@@ -6,7 +6,7 @@ import { fetchSuggestions } from "@/lib/api"
 import useDebounce from "@/hooks/useDebounce"
 
 const SearchIcon = () => (
-  <svg aria-hidden="true" width="16" height="20" viewBox="0 0 20 20" fill="gray-500">
+  <svg aria-hidden="true" width="16" height="20" viewBox="0 0 20 20">
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -24,6 +24,8 @@ export default function Searchbar() {
     fetchSuggestions(value).then(setResults)
   }, 250)
 
+  const showOptions = inputIsActive && results.suggested_queries.length > 0
+
   return (
     <div className="relative w-full">
       <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
@@ -39,30 +41,18 @@ export default function Searchbar() {
           onBlur={() => setInputIsActive(false)}
         />
       </div>
-      {inputIsActive && results.suggested_queries.length > 0 && (
+      {showOptions && (
         <div className="absolute z-10 mt-2 w-[22rem] bg-white py-2 shadow-md">
           {results.suggested_queries.map(item => (
-            <div key={item.q} className="flex cursor-not-allowed py-3 hover:bg-gray-100/80">
+            <div
+              key={item.q}
+              className="flex cursor-not-allowed items-center py-2 hover:bg-gray-100/80"
+            >
               <div className="px-4">
                 <SearchIcon />
               </div>
               <div className="flex w-full items-center justify-between">
                 <span className="line-clamp-1">{item.q}</span>
-                <div className="pe-4 ps-3">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="gray"
-                    className="h-4 w-4"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m19.5 19.5-15-15m0 0v11.25m0-11.25h11.25"
-                    />
-                  </svg>
-                </div>
               </div>
             </div>
           ))}
