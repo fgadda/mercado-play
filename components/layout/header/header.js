@@ -22,7 +22,7 @@ const SettingsIcon = () => (
 
 export default function Header({ children, hasBackButton }) {
   return (
-    <div className="-mx-[10px] bg-[#f5f5f5] px-[10px] pt-[58px] md:pt-[26px]">
+    <div className="-mx-2.5 bg-[#f5f5f5] px-2.5 pt-[58px] md:pt-[26px]">
       <Link
         href="/"
         className={cn("invisible h-[23px] text-xs font-semibold text-primary", {

@@ -6,7 +6,7 @@ import { links } from "@/constants/links"
 export default function Navbar() {
   return (
     <header className="box-content h-[48px] border-b-2 bg-[#ffe600]">
-      <div className="container mx-auto flex h-full max-w-[1200px] items-center justify-between px-[10px]">
+      <div className="container mx-auto flex h-full max-w-[1200px] items-center justify-between px-2.5">
         <Image src={logo} width="134" height="34" alt="logo" priority />
         <nav className="me-[22px] flex items-center gap-[22px]">
           {links.header.map(item => (
