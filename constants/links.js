@@ -36,6 +36,7 @@ export const links = {
       { name: "Más generos", href: `${seriesBasePath}/mas_genero` },
     ],
   },
+  header: ["Creá tu cuenta", "Ingresá", "Ayuda"],
   footer: [
     "Trabajá con nosotros",
     "Términos y condiciones",
