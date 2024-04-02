@@ -1,8 +1,6 @@
 import Link from "next/link"
 
-import LoadMore from "@/components/home/load-more"
 import Tags from "@/components/tags"
-import { fetchFeedContent } from "@/lib/api"
 import Template from "@/app/[[...slug]]/template"
 
 function Card({ content: { title, thumbnail, tags, subtitle, url } }) {
@@ -30,7 +28,7 @@ function Card({ content: { title, thumbnail, tags, subtitle, url } }) {
   )
 }
 
-function Cards({ results }) {
+export default function Cards({ results }) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {results.map(result => (
@@ -39,15 +37,3 @@ function Cards({ results }) {
     </div>
   )
 }
-
-export default async function CardWrapper({ filter }) {
-  const { results, nextPage } = await fetchFeedContent({ filter })
-  return (
-    <>
-      <Cards results={results} />
-      {nextPage && <LoadMore filter={filter} />}
-    </>
-  )
-}
-
-CardWrapper.Cards = Cards
