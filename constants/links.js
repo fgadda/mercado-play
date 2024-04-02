@@ -14,6 +14,8 @@ export const links = {
     peliculas: [
       { name: "Todos", href: moviesBasePath },
       { name: "Top 10", href: `${moviesBasePath}/top-10` },
+      { name: "Para Maratonear", href: `${moviesBasePath}/para-maratonear` },
+      { name: "Ciencia Ficción", href: `${moviesBasePath}/ciencia-ficcion` },
       { name: "Acción", href: `${moviesBasePath}/accion` },
       { name: "Animación", href: `${moviesBasePath}/animacion` },
       { name: "Aventura", href: `${moviesBasePath}/aventura` },
