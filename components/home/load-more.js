@@ -7,16 +7,22 @@ import Spinner from "@/components/spinner"
 import { fetchFeedContent } from "@/lib/api"
 import Cards from "./cards"
 
-export default function LoadMore({ filter }) {
+export default function LoadMore({ filter, resultKeys }) {
   const ref = useRef(null)
   const [feedContent, setFeedContent] = useState({ results: [], nextPage: {} })
   const [offset, setOffset] = useState(24)
   const isInView = useInView(ref, { margin: "400px 0px" })
 
   useEffect(() => {
+    // avoid duplicates between static generation and client side.
+    const filterResults = results => {
+      return results.filter(item => !resultKeys.includes(item.key))
+    }
+
     const loadMoreResults = async offset => {
       const { results, nextPage } = await fetchFeedContent({ offset, filter })
-      setFeedContent({ results: [...feedContent.results, ...results], nextPage })
+      const filteredResults = [...feedContent.results, ...filterResults(results)]
+      setFeedContent({ results: filteredResults, nextPage })
     }
 
     if (isInView) {

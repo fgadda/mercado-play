@@ -11,7 +11,7 @@ export default async function Page({ params: { slug } }) {
   return (
     <section>
       <Cards results={results} />
-      {nextPage && <LoadMore filter={filterParam} />}
+      {nextPage && <LoadMore filter={filterParam} resultKeys={results.map(item => item.key)} />}
     </section>
   )
 }
