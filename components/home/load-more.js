@@ -11,7 +11,7 @@ export default function LoadMore({ filter, resultKeys }) {
   const ref = useRef(null)
   const [feedContent, setFeedContent] = useState({ results: [], nextPage: {} })
   const [offset, setOffset] = useState(24)
-  const isInView = useInView(ref, { margin: "400px 0px" })
+  const isInView = useInView(ref, { margin: "1000px 0px" })
 
   useEffect(() => {
     // avoid duplicates between static generation and client side.
