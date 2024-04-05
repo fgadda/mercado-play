@@ -14,20 +14,9 @@ export default function LoadMore({ filter }) {
   const isInView = useInView(ref, { margin: "400px 0px" })
 
   useEffect(() => {
-    const filterResults = results => {
-      const uniqueTitles = new Set()
-      return results.filter(item => {
-        if (uniqueTitles.has(item.title)) {
-          return false
-        }
-        uniqueTitles.add(item.title)
-        return true
-      })
-    }
-
     const loadMoreResults = async offset => {
       const { results, nextPage } = await fetchFeedContent({ offset, filter })
-      setFeedContent({ results: [...feedContent.results, ...filterResults(results)], nextPage })
+      setFeedContent({ results: [...feedContent.results, ...results], nextPage })
     }
 
     if (isInView) {
