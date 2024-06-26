@@ -1,12 +1,12 @@
 import Link from "next/link"
 
 import Tags from "@/components/tags"
-import Template from "@/app/[[...slug]]/template"
+import AnimatedWrapper from "@/components/animated-wrapper"
 
 function Card({ content: { title, thumbnail, tags, subtitle, url } }) {
   return (
     <article className="rounded-b-md bg-white drop-shadow transition duration-200 ease-out hover:drop-shadow-lg">
-      <Template>
+      <AnimatedWrapper>
         <Link href={url}>
           <img
             className="aspect-video rounded-t-md object-cover"
@@ -23,7 +23,7 @@ function Card({ content: { title, thumbnail, tags, subtitle, url } }) {
             </div>
           </div>
         </Link>
-      </Template>
+      </AnimatedWrapper>
     </article>
   )
 }

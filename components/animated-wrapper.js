@@ -1,6 +1,6 @@
-import { MotionDiv } from "@/components/animation"
+import { MotionDiv } from "./animation"
 
-export default function Template({ children }) {
+export default function AnimatedWrapper({ children }) {
   return (
     <MotionDiv
       initial={{ y: 8, opacity: 0 }}

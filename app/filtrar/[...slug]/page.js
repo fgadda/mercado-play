@@ -3,15 +3,14 @@ import LoadMore from "@/components/home/load-more"
 import { fetchFeedContent } from "@/lib/api"
 
 export default async function Page({ params: { slug } }) {
-  const [, view, filter] = slug || []
-  const filterParam = filter ? [view, filter].join("/") : view
+  const requestParam = slug.join("/")
 
-  const { results, nextPage } = await fetchFeedContent({ filter: filterParam })
+  const { results, nextPage } = await fetchFeedContent({ filter: requestParam })
 
   return (
     <section>
       <Cards results={results} />
-      {nextPage && <LoadMore filter={filterParam} resultKeys={results.map(item => item.key)} />}
+      {nextPage && <LoadMore filter={requestParam} resultKeys={results.map(item => item.key)} />}
     </section>
   )
 }

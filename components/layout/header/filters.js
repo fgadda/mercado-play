@@ -1,14 +1,20 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { links } from "@/constants/links"
 
-export default function Filters({ view, path }) {
+export default function Filters({ view }) {
+  const pathname = usePathname()
   const filters = links.filters[view]
+
   return (
     <div className="no-scrollbar flex w-full items-center gap-2 overflow-x-scroll">
       {filters.map(({ href, name }) => {
-        const linkIsActive = href === path
+        const linkIsActive = pathname === href
+
         return (
           <Link
             key={name}
