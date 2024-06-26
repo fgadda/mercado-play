@@ -1,44 +1,44 @@
-const basePath = "/filtrar"
-const moviesBasePath = `${basePath}/peliculas`
-const seriesBasePath = `${basePath}/series`
+const filterPath = "/filtrar"
+const moviesPath = `${filterPath}/peliculas`
+const seriesPath = `${filterPath}/series`
 
 const tabs = [
   { name: "Para vos", href: "/" },
-  { name: "Más vistos", href: `${basePath}/mas-vistos` },
-  { name: "Películas", href: moviesBasePath },
-  { name: "Series", href: seriesBasePath },
-  { name: "Infantil", href: `${basePath}/infantil` },
+  { name: "Más vistos", href: `${filterPath}/mas-vistos` },
+  { name: "Películas", href: moviesPath },
+  { name: "Series", href: seriesPath },
+  { name: "Infantil", href: `${filterPath}/infantil` },
 ]
 
 const movies = [
-  { name: "Todos", href: moviesBasePath },
-  { name: "Top 10", href: `${moviesBasePath}/top-10` },
-  { name: "Para Maratonear", href: `${moviesBasePath}/para-maratonear` },
-  { name: "Ciencia Ficción", href: `${moviesBasePath}/ciencia-ficcion` },
-  { name: "Acción", href: `${moviesBasePath}/accion` },
-  { name: "Animación", href: `${moviesBasePath}/animacion` },
-  { name: "Aventura", href: `${moviesBasePath}/aventura` },
-  { name: "Comedia", href: `${moviesBasePath}/comedia` },
-  { name: "Crimen", href: `${moviesBasePath}/crimen` },
-  { name: "Documental", href: `${moviesBasePath}/documental` },
-  { name: "Drama", href: `${moviesBasePath}/drama` },
-  { name: "Terror", href: `${moviesBasePath}/terror` },
+  { name: "Todos", href: moviesPath },
+  { name: "Top 10", href: `${moviesPath}/top-10` },
+  { name: "Para Maratonear", href: `${moviesPath}/para-maratonear` },
+  { name: "Ciencia Ficción", href: `${moviesPath}/ciencia-ficcion` },
+  { name: "Acción", href: `${moviesPath}/accion` },
+  { name: "Animación", href: `${moviesPath}/animacion` },
+  { name: "Aventura", href: `${moviesPath}/aventura` },
+  { name: "Comedia", href: `${moviesPath}/comedia` },
+  { name: "Crimen", href: `${moviesPath}/crimen` },
+  { name: "Documental", href: `${moviesPath}/documental` },
+  { name: "Drama", href: `${moviesPath}/drama` },
+  { name: "Terror", href: `${moviesPath}/terror` },
 ]
 
 const series = [
-  { name: "Todos", href: seriesBasePath },
-  { name: "Top 10", href: `${seriesBasePath}/top-10` },
-  { name: "Drama", href: `${seriesBasePath}/drama` },
-  { name: "Comedia", href: `${seriesBasePath}/comedia` },
-  { name: "Anime", href: `${seriesBasePath}/anime` },
-  { name: "Acción & Aventura", href: `${seriesBasePath}/accion_aventura` },
-  { name: "Pasar el rato", href: `${seriesBasePath}/pasar_el_rato` },
-  { name: "Más generos", href: `${seriesBasePath}/mas_genero` },
+  { name: "Todos", href: seriesPath },
+  { name: "Top 10", href: `${seriesPath}/top-10` },
+  { name: "Drama", href: `${seriesPath}/drama` },
+  { name: "Comedia", href: `${seriesPath}/comedia` },
+  { name: "Anime", href: `${seriesPath}/anime` },
+  { name: "Acción & Aventura", href: `${seriesPath}/accion_aventura` },
+  { name: "Pasar el rato", href: `${seriesPath}/pasar_el_rato` },
+  { name: "Más generos", href: `${seriesPath}/mas_genero` },
 ]
 
-const headerLinks = ["Creá tu cuenta", "Ingresá", "Ayuda"]
+const header = ["Creá tu cuenta", "Ingresá", "Ayuda"]
 
-const footerLinks = [
+const footer = [
   "Trabajá con nosotros",
   "Términos y condiciones",
   "Cómo cuidamos tu privacidad",
@@ -53,10 +53,7 @@ const footerLinks = [
 
 export const links = {
   tabs,
-  filters: {
-    peliculas: movies,
-    series,
-  },
-  header: headerLinks,
-  footer: footerLinks,
+  filters: { peliculas: movies, series },
+  header,
+  footer,
 }
