@@ -26,7 +26,7 @@ const SERIES_FILTERS_DATA = [
   { name: "Anime", path: "/anime" },
   { name: "Acción & Aventura", path: "/accion_aventura" },
   { name: "Pasar el rato", path: "/pasar_el_rato" },
-  { name: "Más géneros", path: "/mas_genero" },
+  // { name: "Más géneros", path: "/mas_genero" },
 ]
 
 const generateFilters = (basePath, filters) => {
