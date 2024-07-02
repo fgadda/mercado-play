@@ -1,22 +1,24 @@
 import Header from "@/components/layout/header/header"
 import Tabs from "@/components/layout/header/tabs"
 import Filters from "@/components/layout/header/filters"
-import { links } from "@/constants/links"
+import { FLAT_LINKS, FILTERS, FILTER_PATH } from "@/constants/navigationLinks"
 import { cn } from "@/lib/utils"
 
 export const dynamicParams = false
 
-export function generateStaticParams() {
-  const flatLinks = [...links.tabs, ...Object.values(links.filters).flatMap(category => category)]
-  const paths = flatLinks.map(item => ({
-    slug: item.href.split("/").filter(segment => segment && segment !== "filtrar"),
+const getFormattedPaths = () => {
+  return FLAT_LINKS.filter(({ href }) => href.includes(FILTER_PATH)).map(({ slug }) => ({
+    slug: slug.split("/").filter(Boolean),
   }))
-  return paths
+}
+
+export function generateStaticParams() {
+  return getFormattedPaths()
 }
 
 export default function Layout({ children, params: { slug } }) {
   const [activeView] = slug
-  const viewHasFilters = links.filters.hasOwnProperty(activeView)
+  const viewHasFilters = FILTERS.hasOwnProperty(activeView)
 
   return (
     <>

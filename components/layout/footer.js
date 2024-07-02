@@ -1,4 +1,4 @@
-import { links } from "@/constants/links"
+import { FOOTER_LINKS } from "@/constants/navigationLinks"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="box-content border-t bg-white">
       <div className="container mx-auto h-full max-w-[1200px] items-center justify-between px-2.5 py-3.5">
         <div className="flex flex-wrap gap-x-4 gap-y-0.5">
-          {links.footer.map(item => (
+          {FOOTER_LINKS.map(item => (
             <div key={item} className="cursor-not-allowed text-[13px]">
               {item}
             </div>

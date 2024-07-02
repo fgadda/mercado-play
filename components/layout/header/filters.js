@@ -4,11 +4,11 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
-import { links } from "@/constants/links"
+import { FILTERS } from "@/constants/navigationLinks"
 
 export default function Filters({ view }) {
   const pathname = usePathname()
-  const filters = links.filters[view]
+  const filters = FILTERS[view]
 
   return (
     <div className="no-scrollbar flex w-full items-center gap-2 overflow-x-scroll">

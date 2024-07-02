@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import { links } from "@/constants/links"
+import { TABS } from "@/constants/navigationLinks"
 import { cn } from "@/lib/utils"
 
 export default function Tabs({ path }) {
@@ -12,7 +12,7 @@ export default function Tabs({ path }) {
   return (
     <div className="border-b border-gray-300/80 text-center text-sm font-semibold md:text-base">
       <div className="flex flex-wrap gap-[40px]">
-        {links.tabs.map(({ href, name }) => {
+        {TABS.map(({ href, name }) => {
           const linkIsActive = href === "/" ? path === href : pathname.includes(href)
 
           return (
