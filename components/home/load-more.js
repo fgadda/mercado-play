@@ -37,7 +37,7 @@ export default function LoadMore({ filter, resultKeys }) {
       <Cards results={feedContent.results} />
 
       {feedContent.nextPage && (
-        <div className="col-span-4 mt-6">
+        <div className="mt-6 grid-cols-1 sm:grid-cols-2 md:col-span-3 lg:col-span-4">
           <Spinner ref={ref} className="mx-auto" />
         </div>
       )}
