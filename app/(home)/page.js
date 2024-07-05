@@ -6,9 +6,9 @@ export default async function Page() {
   const { results, nextPage } = await fetchFeedContent({})
 
   return (
-    <section>
+    <Cards.Container>
       <Cards results={results} />
       {nextPage && <LoadMore resultKeys={results.map(item => item.key)} />}
-    </section>
+    </Cards.Container>
   )
 }

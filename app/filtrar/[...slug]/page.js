@@ -8,9 +8,9 @@ export default async function Page({ params: { slug } }) {
   const { results, nextPage } = await fetchFeedContent({ filter: requestParam })
 
   return (
-    <section>
+    <Cards.Container>
       <Cards results={results} />
       {nextPage && <LoadMore filter={requestParam} resultKeys={results.map(item => item.key)} />}
-    </section>
+    </Cards.Container>
   )
 }

@@ -28,12 +28,16 @@ function Card({ content: { title, thumbnail, tags, subtitle, url } }) {
   )
 }
 
-export default function Cards({ results }) {
+function Container({ children }) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {results.map(result => (
-        <Card key={result.key} content={result} />
-      ))}
+      {children}
     </div>
   )
 }
+
+export default function Cards({ results }) {
+  return results.map(result => <Card key={result.key} content={result} />)
+}
+
+Cards.Container = Container

@@ -34,11 +34,10 @@ export default function LoadMore({ filter, resultKeys }) {
 
   return (
     <>
-      <div className="mt-4">
-        <Cards results={feedContent.results} />
-      </div>
+      <Cards results={feedContent.results} />
+
       {feedContent.nextPage && (
-        <div className="mt-6 flex w-full">
+        <div className="col-span-4 mt-6">
           <Spinner ref={ref} className="mx-auto" />
         </div>
       )}
